@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Roboto", "Helvetica Neue", sans-serif;
+  --color-accent-color: var(--accent-color);
+}
+
+@layer base {
+  :root {
+    --bg-color: #f8fafc;
+    --text-color: #0f172a;
+    --accent-color: #3b82f6; 
+  }
+  
+  /* Vibe: Neutral (Neutral) */
+  :root[data-theme="neutral"] {
+    --bg-color: #f1f5f9;
+    --text-color: #334155;
+    --accent-color: #64748b;
+  }
+
+  /* Vibe: Sad (😔) */
+  :root[data-theme="sad"] {
+    --bg-color: #eff6ff;
+    --text-color: #1e3a8a;
+    --accent-color: #60a5fa;
+  }
+
+  /* Vibe: Energetic (🤩) */
+  :root[data-theme="energetic"] {
+    --bg-color: #fff7ed;
+    --text-color: #9a3412;
+    --accent-color: #f97316;
+  }
+
+  /* Vibe: Zen (🧘) */
+  :root[data-theme="zen"] {
+    --bg-color: #f0fdf4;
+    --text-color: #14532d;
+    --accent-color: #4ade80;
+  }
+
+  /* Vibe: Happy (🙂) */
+  :root[data-theme="happy"] {
+    --bg-color: #fefce8;
+    --text-color: #854d0e;
+    --accent-color: #eab308;
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/30 backdrop-blur-md border border-white/40 shadow-xl;
+  }
+  
+  .glass-dark {
+    @apply bg-black/10 backdrop-blur-md border border-black/10 shadow-xl;
+  }
+}
