@@ -1,18 +1,17 @@
-@import "tailwindcss";
-
-@theme {
-  --font-sans: "Inter", "Roboto", "Helvetica Neue", sans-serif;
-  --color-accent-color: var(--accent-color);
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
   :root {
     --bg-color: #f8fafc;
     --text-color: #0f172a;
-    --accent-color: #3b82f6; 
+    --accent-color: #3b82f6;
   }
   
-  /* Vibe: Neutral (Neutral) */
+  /* Vibe: Neutral */
   :root[data-theme="neutral"] {
     --bg-color: #f1f5f9;
     --text-color: #334155;
@@ -50,11 +49,12 @@
   body {
     background-color: var(--bg-color);
     color: var(--text-color);
+    font-family: 'Inter', 'Roboto', 'Helvetica Neue', sans-serif;
     transition: background-color 0.5s ease, color 0.5s ease;
   }
 }
 
-@layer utilities {
+@layer components {
   .glass {
     @apply bg-white/30 backdrop-blur-md border border-white/40 shadow-xl;
   }
